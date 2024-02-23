@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alice in Wonderland</title>
+		<link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+	<h1> Alice in Wonderland </h1>
+	<h2> Picture </h2>
+        <p id = "picture_text"></p>
+		<img width = "500" height="500" id="alice_image" src = "images/alice_in_w1.jpg">
+		<br>
+		<input type="button" id="change_pic" value="Change Picture!">
+		<script>
+            let num = 1;
+			//let fs = require('fs');
+			//let files = fs.readdirSync('/images/');
+			let files = ["images/alice_in_w1.jpg","images/alice_in_w2.jpg","images/alice_in_w3.jpg"]
+            document.getElementById("change_pic").addEventListener("click", function() {
+				alice_picture_num = num%files.length;
+				console.log = files[alice_picture_num];
+                document.getElementById("alice_image").src = files[alice_picture_num];
+				num++;
+            });
+        </script>
+    </body>
+</html>
